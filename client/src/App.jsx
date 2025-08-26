@@ -11,7 +11,10 @@ const App = () => {
 
   const handleRegister = async () => {
     try {
-      const res = await axios.post("http://localhost:8000/register", form);
+      const res = await axios.post(
+        "https://react-express-auth-production.up.railway.app/register",
+        form
+      );
       alert(res.data.message);
     } catch (err) {
       alert(err.response.data.error);
@@ -20,7 +23,10 @@ const App = () => {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post("http://localhost:8000/login", form);
+      const res = await axios.post(
+        "https://react-express-auth-production.up.railway.app/login",
+        form
+      );
       setLoggeddInUser(res.data.username);
     } catch (err) {
       alert(err.response.data.error);
